@@ -1,3 +1,79 @@
+/* Preloader */
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222222;
+  z-index: 2000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+#loader {
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  z-index: 3005; /* anything higher than z-index: 1000 of .loader-section */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  color: #eeeeee;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%); /* IE 9 */
+  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%); /* IE 9 */
+  transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+
+  -webkit-transition: all 0.3s 0.6s ease-out;
+  transition: all 0.3s 0.6s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 /* Typography */
 
 h1,
@@ -175,6 +251,27 @@ header .overlay {
   min-height: 30rem;
 }
 
+.services-header {
+  width: 100%;
+  height: 400px;
+  background: url("../img/services.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+  min-height: 30rem;
+}
+
+.contact-header {
+  width: 100%;
+  height: 400px;
+  background: url("../img/contact.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+  min-height: 30rem;
+}
 
 .notfound-header {
   width: 100%;
