@@ -26,6 +26,7 @@ $(function () {
   // alert(window.location.pathname);
 
   $("#headerinc").load("includes/header.html");
+  $("#servicesinc").load("includes/servicesblock.html");
   $("#newsletterinc").load("includes/newsletter.html");
   $("#footerinc").load("includes/footer.html");
 });
